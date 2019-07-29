@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Calc Difference</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Days Diff Calculator:</h1>
+
+	<form action="#" th:action="@{/dateForm}" th:object="${dateForm}"
+		method="post">
+		<p>
+			Start Date: <input type="date" th:field="*{startDate}" /> <br />
+			End Date: <input type="date" th:field="*{endDate}" /> <br /> 
+						<br />
+						<br />
+			<input type="submit" value="Calculate Diff" /> <br />
+			<br />
+			<br />
+		</p>
+	</form>
+	
+	
+	<!-- Check if errorMessage is not null and not empty -->
+	<div th:if="${errorMessage}" th:utext="${errorMessage}"
+		style="color: red; font-style: italic;">...</div>
+
+</body>
+</html>
